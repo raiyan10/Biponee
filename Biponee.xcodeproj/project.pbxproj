@@ -13,6 +13,7 @@
 		ACA019B21AEE121D00221981 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA019B11AEE121D00221981 /* Images.xcassets */; };
 		ACA019B51AEE121D00221981 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA019B31AEE121D00221981 /* LaunchScreen.xib */; };
 		ACA019C11AEE121D00221981 /* BiponeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019C01AEE121D00221981 /* BiponeeTests.swift */; };
+		ACA019CE1AEE13CE00221981 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019CD1AEE13CE00221981 /* MenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		ACA019BA1AEE121D00221981 /* BiponeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiponeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA019BF1AEE121D00221981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACA019C01AEE121D00221981 /* BiponeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiponeeTests.swift; sourceTree = "<group>"; };
+		ACA019CD1AEE13CE00221981 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +79,9 @@
 		ACA019A71AEE121D00221981 /* Biponee */ = {
 			isa = PBXGroup;
 			children = (
-				ACA019AA1AEE121D00221981 /* AppDelegate.swift */,
-				ACA019AC1AEE121D00221981 /* ViewController.swift */,
-				ACA019AE1AEE121D00221981 /* Main.storyboard */,
-				ACA019B11AEE121D00221981 /* Images.xcassets */,
-				ACA019B31AEE121D00221981 /* LaunchScreen.xib */,
+				ACA019CC1AEE125200221981 /* Controller */,
+				ACA019CB1AEE124B00221981 /* View */,
+				ACA019CA1AEE124100221981 /* Model */,
 				ACA019A81AEE121D00221981 /* Supporting Files */,
 			);
 			path = Biponee;
@@ -110,6 +110,33 @@
 				ACA019BF1AEE121D00221981 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACA019CA1AEE124100221981 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ACA019CB1AEE124B00221981 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACA019AE1AEE121D00221981 /* Main.storyboard */,
+				ACA019B31AEE121D00221981 /* LaunchScreen.xib */,
+				ACA019B11AEE121D00221981 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		ACA019CC1AEE125200221981 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ACA019AA1AEE121D00221981 /* AppDelegate.swift */,
+				ACA019AC1AEE121D00221981 /* ViewController.swift */,
+				ACA019CD1AEE13CE00221981 /* MenuController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA019AD1AEE121D00221981 /* ViewController.swift in Sources */,
+				ACA019CE1AEE13CE00221981 /* MenuController.swift in Sources */,
 				ACA019AB1AEE121D00221981 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
