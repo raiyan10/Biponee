@@ -1,15 +1,20 @@
 //
-//  MenuController.swift
+//  CategoryTableViewController.swift
 //  Biponee
 //
-//  Created by Masudur Rahman on 4/27/15.
+//  Created by Masudur Rahman on 4/29/15.
 //  Copyright (c) 2015 BS-23. All rights reserved.
 //
 
 import UIKit
 
-class MenuController: UITableViewController {
+class CategoryTableViewController: UITableViewController {
 
+    let cellIdentifier : String = "catCell"
+    let headerIdentifier : String = "headerCell"
+    
+    var headerTitle : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,31 +32,27 @@ class MenuController: UITableViewController {
 
     // MARK: - Table view data source
 
-    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
-    */
 
-    /*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return 5
     }
-    */
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CategoryTableViewCell
 
         // Configure the cell...
+        cell.titleLabel.text = "Category \(indexPath.row + 1)"
+        cell.closureImageView.hidden = false
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -88,14 +89,31 @@ class MenuController: UITableViewController {
     }
     */
     
-    // MARK: - Table view delegate
+    // MARK: - Table view data source
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableCellWithIdentifier(headerIdentifier) as! HeaderTableViewCell
+        
+        // Configure the header...
+        headerView.titleLabel.text = headerTitle
+        
+        return headerView
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 2 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! CategoryTableViewCell
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if indexPath.row == 3
+        {
+            let homeNavCon = storyboard.instantiateViewControllerWithIdentifier("homeNavCon") as! UINavigationController
             
+            self.revealViewController().pushFrontViewController(homeNavCon, animated: true)
+        }
+        else
+        {
             let catTableViewController = storyboard.instantiateViewControllerWithIdentifier("catTableVC") as! CategoryTableViewController
-            catTableViewController.headerTitle = "Categories"
+            catTableViewController.headerTitle = cell.titleLabel.text!
             
             self.navigationController!.pushViewController(catTableViewController, animated: true)
         }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */; };
+		AC7ECCED1AF0DD9A00888FD1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7ECCEC1AF0DD9A00888FD1 /* CategoryTableViewCell.swift */; };
+		AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7ECCEE1AF0ED0700888FD1 /* HeaderTableViewCell.swift */; };
 		ACA019AB1AEE121D00221981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019AA1AEE121D00221981 /* AppDelegate.swift */; };
 		ACA019B01AEE121D00221981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA019AE1AEE121D00221981 /* Main.storyboard */; };
 		ACA019B21AEE121D00221981 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA019B11AEE121D00221981 /* Images.xcassets */; };
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		AC7ECCEC1AF0DD9A00888FD1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		AC7ECCEE1AF0ED0700888FD1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		ACA019A51AEE121D00221981 /* Biponee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biponee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA019A91AEE121D00221981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACA019AA1AEE121D00221981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,9 @@
 				ACA019AA1AEE121D00221981 /* AppDelegate.swift */,
 				ACA019CD1AEE13CE00221981 /* MenuController.swift */,
 				ACA019CF1AEE2BFD00221981 /* HomeViewController.swift */,
+				AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */,
+				AC7ECCEC1AF0DD9A00888FD1 /* CategoryTableViewCell.swift */,
+				AC7ECCEE1AF0ED0700888FD1 /* HeaderTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -264,8 +273,11 @@
 			files = (
 				ACA019CE1AEE13CE00221981 /* MenuController.swift in Sources */,
 				ACA019AB1AEE121D00221981 /* AppDelegate.swift in Sources */,
+				AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */,
+				AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */,
 				ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */,
 				ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */,
+				AC7ECCED1AF0DD9A00888FD1 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +482,7 @@
 				ACA019C61AEE121D00221981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACA019C71AEE121D00221981 /* Build configuration list for PBXNativeTarget "BiponeeTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +491,7 @@
 				ACA019C91AEE121D00221981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
