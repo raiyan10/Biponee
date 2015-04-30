@@ -13,6 +13,7 @@ class CategoryTableViewController: UITableViewController {
     let cellIdentifier : String = "catCell"
     let headerIdentifier : String = "headerCell"
     
+    var productCategories : NSMutableArray = []
     var headerTitle : String = ""
     
     override func viewDidLoad() {
@@ -41,14 +42,14 @@ class CategoryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 5
+        return self.productCategories.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CategoryTableViewCell
 
         // Configure the cell...
-        cell.titleLabel.text = "Category \(indexPath.row + 1)"
+        cell.titleLabel.text = (self.productCategories.objectAtIndex(indexPath.row) as! Category).Name
         cell.closureImageView.hidden = false
 
         return cell
@@ -104,7 +105,11 @@ class CategoryTableViewController: UITableViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if indexPath.row == 3
+        let catId = (self.productCategories.objectAtIndex(indexPath.row) as! Category).Id
+        
+        let subCategories = (Biponee.rootCategories  as! [NSDictionary]).filter({ ($0["ParentCategoryId"] as! Int) == catId }).map { Category(id: $0["Id"] as! Int, name: $0["Name"] as! String, parentId: $0["ParentCategoryId"] as! Int) }
+        
+        if subCategories.count == 0
         {
             let homeNavCon = storyboard.instantiateViewControllerWithIdentifier("homeNavCon") as! UINavigationController
             
@@ -114,6 +119,7 @@ class CategoryTableViewController: UITableViewController {
         {
             let catTableViewController = storyboard.instantiateViewControllerWithIdentifier("catTableVC") as! CategoryTableViewController
             catTableViewController.headerTitle = cell.titleLabel.text!
+            catTableViewController.productCategories = NSMutableArray(array: subCategories)
             
             self.navigationController!.pushViewController(catTableViewController, animated: true)
         }

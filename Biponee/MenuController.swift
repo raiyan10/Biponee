@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Alamofire
 
-class MenuController: UITableViewController {
-
-    override func viewDidLoad() {
+class MenuController: UITableViewController
+{
+    var categories = NSMutableArray()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -20,7 +24,8 @@ class MenuController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -28,7 +33,8 @@ class MenuController: UITableViewController {
     // MARK: - Table view data source
 
     /*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int 
+    {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 0
@@ -36,7 +42,8 @@ class MenuController: UITableViewController {
     */
 
     /*
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
+    {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return 0
@@ -44,7 +51,8 @@ class MenuController: UITableViewController {
     */
 
     /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell 
+    {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
@@ -55,7 +63,8 @@ class MenuController: UITableViewController {
 
     /*
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool 
+    {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
@@ -63,11 +72,15 @@ class MenuController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) 
+    {
+        if editingStyle == .Delete 
+        {
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+        } 
+        else if editingStyle == .Insert 
+        {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
@@ -75,14 +88,16 @@ class MenuController: UITableViewController {
 
     /*
     // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) 
+    {
 
     }
     */
 
     /*
     // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool 
+    {
         // Return NO if you do not want the item to be re-orderable.
         return true
     }
@@ -90,14 +105,42 @@ class MenuController: UITableViewController {
     
     // MARK: - Table view delegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 2 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let catTableViewController = storyboard.instantiateViewControllerWithIdentifier("catTableVC") as! CategoryTableViewController
-            catTableViewController.headerTitle = "Categories"
-            
-            self.navigationController!.pushViewController(catTableViewController, animated: true)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if indexPath.row == 2
+        {
+            Alamofire.request(Biponee.Router.Categories).validate().responseJSON()
+            {
+                (_, _, JSON, error) in
+                
+                //println(JSON)
+                if error == nil
+                {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0))
+                    {
+                        Biponee.rootCategories = JSON  
+                        
+                        let cat_prods = (JSON  as! [NSDictionary]).filter({ ($0["ParentCategoryId"] as! Int) == 0 }).map { Category(id: $0["Id"] as! Int, name: $0["Name"] as! String, parentId: $0["ParentCategoryId"] as! Int) }
+                        
+                        self.categories = NSMutableArray(array: cat_prods)
+                        
+                        dispatch_async(dispatch_get_main_queue())
+                        {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            
+                            let catTableViewController = storyboard.instantiateViewControllerWithIdentifier("catTableVC") as! CategoryTableViewController
+                            catTableViewController.productCategories = self.categories
+                            catTableViewController.headerTitle = "Categories"
+                            
+                            self.navigationController!.pushViewController(catTableViewController, animated: true)
+                        }
+                    }
+                }
+                else
+                {
+                    println("Error: \(error!.localizedDescription)")
+                }
+            }
         }
     }
 

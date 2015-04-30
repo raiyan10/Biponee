@@ -20,6 +20,7 @@
 		ACA019CE1AEE13CE00221981 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019CD1AEE13CE00221981 /* MenuController.swift */; };
 		ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019CF1AEE2BFD00221981 /* HomeViewController.swift */; };
 		ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA019D51AEE2F4500221981 /* SWRevealViewController.m */; };
+		ACA62C811AF2243400304262 /* Biponee.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA62C801AF2243400304262 /* Biponee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		ACA019D31AEE2F4500221981 /* Biponee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Biponee-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACA019D41AEE2F4500221981 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		ACA019D51AEE2F4500221981 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		ACA62C801AF2243400304262 /* Biponee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biponee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		ACA019CA1AEE124100221981 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ACA62C801AF2243400304262 /* Biponee.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			files = (
 				ACA019CE1AEE13CE00221981 /* MenuController.swift in Sources */,
 				ACA019AB1AEE121D00221981 /* AppDelegate.swift in Sources */,
+				ACA62C811AF2243400304262 /* Biponee.swift in Sources */,
 				AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */,
 				AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */,
 				ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */,
