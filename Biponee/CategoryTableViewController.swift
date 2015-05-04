@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CategoryTableViewController: UITableViewController {
 
@@ -15,6 +16,8 @@ class CategoryTableViewController: UITableViewController {
     
     var productCategories : NSMutableArray = []
     var headerTitle : String = ""
+    
+    var catDetails = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,9 +114,35 @@ class CategoryTableViewController: UITableViewController {
         
         if subCategories.count == 0
         {
-            let homeNavCon = storyboard.instantiateViewControllerWithIdentifier("homeNavCon") as! UINavigationController
+            Alamofire.request(Biponee.Router.CategoryDetail(catId)).validate().responseJSON()
+            {
+                (_, _, JSON, error) in
             
-            self.revealViewController().pushFrontViewController(homeNavCon, animated: true)
+                //println(JSON)
+                if error == nil
+                {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0))
+                    {
+                        let cat_Detail = (JSON  as! [NSDictionary]).map{ CategoryDetails(JSON: $0) }
+                        self.catDetails = NSMutableArray(array: cat_Detail)
+                            
+                        dispatch_async(dispatch_get_main_queue())
+                        {
+                            let catDetailNavCon = storyboard.instantiateViewControllerWithIdentifier("catDetailNavCon") as! UINavigationController
+                            
+                            let catDetailViewCon = catDetailNavCon.childViewControllers[0] as! CategoryDetailViewController
+                            catDetailViewCon.navTitle = (self.productCategories.objectAtIndex(indexPath.row) as! Category).Name
+                            catDetailViewCon.categoryDetails = self.catDetails
+                                
+                            self.revealViewController().pushFrontViewController(catDetailNavCon, animated: true)
+                        }
+                    }
+                }
+                else
+                {
+                    println("Error: \(error!.localizedDescription)")
+                }
+            }
         }
         else
         {

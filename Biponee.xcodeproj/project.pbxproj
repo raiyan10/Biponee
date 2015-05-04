@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2F38D41AF78CD600FF6D21 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F38D31AF78CD600FF6D21 /* CategoryDetailViewController.swift */; };
+		AC2F38D61AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F38D51AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift */; };
 		AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */; };
 		AC7ECCED1AF0DD9A00888FD1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7ECCEC1AF0DD9A00888FD1 /* CategoryTableViewCell.swift */; };
 		AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7ECCEE1AF0ED0700888FD1 /* HeaderTableViewCell.swift */; };
@@ -83,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC2F38D31AF78CD600FF6D21 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
+		AC2F38D51AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		AC7ECCEC1AF0DD9A00888FD1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		AC7ECCEE1AF0ED0700888FD1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +127,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC2F38C81AF75B7D00FF6D21 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ACA019CF1AEE2BFD00221981 /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		AC2F38CC1AF75B8600FF6D21 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */,
+				AC7ECCEC1AF0DD9A00888FD1 /* CategoryTableViewCell.swift */,
+				AC7ECCEE1AF0ED0700888FD1 /* HeaderTableViewCell.swift */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		AC2F38CD1AF75B8E00FF6D21 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				ACA019CD1AEE13CE00221981 /* MenuController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		AC2F38CE1AF75BDF00FF6D21 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				ACA019AA1AEE121D00221981 /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		AC2F38D01AF7891F00FF6D21 /* Category Details */ = {
+			isa = PBXGroup;
+			children = (
+				AC2F38D31AF78CD600FF6D21 /* CategoryDetailViewController.swift */,
+				AC2F38D51AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift */,
+			);
+			name = "Category Details";
+			sourceTree = "<group>";
+		};
 		AC7ECCF21AF1297200888FD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,12 +258,11 @@
 		ACA019CC1AEE125200221981 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ACA019AA1AEE121D00221981 /* AppDelegate.swift */,
-				ACA019CD1AEE13CE00221981 /* MenuController.swift */,
-				ACA019CF1AEE2BFD00221981 /* HomeViewController.swift */,
-				AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */,
-				AC7ECCEC1AF0DD9A00888FD1 /* CategoryTableViewCell.swift */,
-				AC7ECCEE1AF0ED0700888FD1 /* HeaderTableViewCell.swift */,
+				AC2F38CE1AF75BDF00FF6D21 /* App Delegate */,
+				AC2F38CD1AF75B8E00FF6D21 /* Menu */,
+				AC2F38C81AF75B7D00FF6D21 /* Home */,
+				AC2F38CC1AF75B8600FF6D21 /* Category */,
+				AC2F38D01AF7891F00FF6D21 /* Category Details */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -381,8 +427,10 @@
 				ACA019CE1AEE13CE00221981 /* MenuController.swift in Sources */,
 				ACA019AB1AEE121D00221981 /* AppDelegate.swift in Sources */,
 				ACA62C811AF2243400304262 /* Biponee.swift in Sources */,
+				AC2F38D41AF78CD600FF6D21 /* CategoryDetailViewController.swift in Sources */,
 				AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */,
 				AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */,
+				AC2F38D61AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift in Sources */,
 				ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */,
 				ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */,
 				AC7ECCED1AF0DD9A00888FD1 /* CategoryTableViewCell.swift in Sources */,
@@ -526,6 +574,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Biponee/Biponee-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -539,6 +588,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Biponee/Biponee-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

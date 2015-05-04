@@ -235,6 +235,119 @@
             </objects>
             <point key="canvasLocation" x="2268" y="-125"/>
         </scene>
+        <!--Category Detail View Controller-->
+        <scene sceneID="goo-1V-TeY">
+            <objects>
+                <viewController id="dZw-G4-R47" customClass="CategoryDetailViewController" customModule="Biponee" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FFo-0g-E40"/>
+                        <viewControllerLayoutGuide type="bottom" id="JWZ-pv-7Tp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vrI-Wn-qQY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgN-Ch-Vap">
+                                <rect key="frame" x="0.0" y="64" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DIK-X3-axS"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0dG-m3-jOY">
+                                <rect key="frame" x="4" y="124" width="592" height="476"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dRI-IU-icA">
+                                    <size key="itemSize" width="200" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="catCell" id="WaQ-kL-IPd" customClass="CategoryCollectionViewCell" customModule="Biponee" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tZ2-Ma-5jT">
+                                                    <rect key="frame" x="30" y="10" width="140" height="150"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9O-55-dYf">
+                                                    <rect key="frame" x="8" y="194" width="184" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                                    <color key="textColor" red="0.35294117650000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM9-hI-oru">
+                                                    <rect key="frame" x="8" y="170" width="184" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aq8-AV-MXX">
+                                                    <rect key="frame" x="8" y="218" width="184" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="tZ2-Ma-5jT" firstAttribute="top" secondItem="WaQ-kL-IPd" secondAttribute="top" constant="10" id="3e5-fw-C5F"/>
+                                            <constraint firstItem="r9O-55-dYf" firstAttribute="top" secondItem="jM9-hI-oru" secondAttribute="bottom" id="5qQ-6L-iZi"/>
+                                            <constraint firstItem="Aq8-AV-MXX" firstAttribute="top" secondItem="r9O-55-dYf" secondAttribute="bottom" id="Tuu-Vt-hu0"/>
+                                            <constraint firstItem="tZ2-Ma-5jT" firstAttribute="leading" secondItem="WaQ-kL-IPd" secondAttribute="leading" constant="30" id="W2O-EW-25I"/>
+                                            <constraint firstAttribute="bottom" secondItem="Aq8-AV-MXX" secondAttribute="bottom" constant="8" id="aEx-Ge-mhU"/>
+                                            <constraint firstAttribute="trailing" secondItem="jM9-hI-oru" secondAttribute="trailing" constant="8" id="aIi-30-kCo"/>
+                                            <constraint firstAttribute="trailing" secondItem="r9O-55-dYf" secondAttribute="trailing" constant="8" id="dME-7C-v5B"/>
+                                            <constraint firstAttribute="trailing" secondItem="Aq8-AV-MXX" secondAttribute="trailing" constant="8" id="dfD-3G-U7u"/>
+                                            <constraint firstItem="jM9-hI-oru" firstAttribute="top" secondItem="tZ2-Ma-5jT" secondAttribute="bottom" constant="10" id="g98-Zl-fg4"/>
+                                            <constraint firstAttribute="trailing" secondItem="tZ2-Ma-5jT" secondAttribute="trailing" constant="30" id="hnH-Mp-fHd"/>
+                                            <constraint firstItem="Aq8-AV-MXX" firstAttribute="leading" secondItem="WaQ-kL-IPd" secondAttribute="leading" constant="8" id="k80-0p-QyW"/>
+                                            <constraint firstItem="jM9-hI-oru" firstAttribute="leading" secondItem="WaQ-kL-IPd" secondAttribute="leading" constant="8" id="pSs-uQ-xYF"/>
+                                            <constraint firstItem="r9O-55-dYf" firstAttribute="leading" secondItem="WaQ-kL-IPd" secondAttribute="leading" constant="8" id="zuQ-Jg-yz1"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="catImageView" destination="tZ2-Ma-5jT" id="CSg-cR-33s"/>
+                                            <outlet property="nameLabel" destination="jM9-hI-oru" id="6Ra-F8-tEC"/>
+                                            <outlet property="priceLabel" destination="Aq8-AV-MXX" id="avb-op-a7S"/>
+                                            <outlet property="shortDescLabel" destination="r9O-55-dYf" id="6dh-Rm-C6D"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dZw-G4-R47" id="P8a-gg-LGg"/>
+                                    <outlet property="delegate" destination="dZw-G4-R47" id="yZg-mZ-KhO"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qgN-Ch-Vap" firstAttribute="top" secondItem="FFo-0g-E40" secondAttribute="bottom" id="GgK-aq-MbM"/>
+                            <constraint firstItem="JWZ-pv-7Tp" firstAttribute="top" secondItem="0dG-m3-jOY" secondAttribute="bottom" id="Mdu-WY-aXM"/>
+                            <constraint firstAttribute="trailing" secondItem="0dG-m3-jOY" secondAttribute="trailing" constant="4" id="Mwu-Nn-1Wm"/>
+                            <constraint firstItem="0dG-m3-jOY" firstAttribute="leading" secondItem="vrI-Wn-qQY" secondAttribute="leading" constant="4" id="UIY-yM-QQw"/>
+                            <constraint firstAttribute="trailing" secondItem="qgN-Ch-Vap" secondAttribute="trailing" id="aQV-ZK-T9r"/>
+                            <constraint firstItem="qgN-Ch-Vap" firstAttribute="leading" secondItem="vrI-Wn-qQY" secondAttribute="leading" id="af5-Gz-jbk"/>
+                            <constraint firstItem="0dG-m3-jOY" firstAttribute="top" secondItem="qgN-Ch-Vap" secondAttribute="bottom" id="wIS-xs-6l6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zjh-YB-F4G">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="3GG-iP-Vue"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="0dG-m3-jOY" id="X1s-Jy-f0U"/>
+                        <outlet property="menuButton" destination="3GG-iP-Vue" id="e0i-Pp-zkJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXl-aN-XEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2298" y="1255"/>
+        </scene>
         <!--Category Table View Controller-->
         <scene sceneID="npK-rY-kBC">
             <objects>
@@ -320,6 +433,24 @@
             </objects>
             <point key="canvasLocation" x="674" y="-125"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VKb-Fo-qI5">
+            <objects>
+                <navigationController storyboardIdentifier="catDetailNavCon" automaticallyAdjustsScrollViewInsets="NO" id="qti-6V-OGc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aga-Ik-bFr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dZw-G4-R47" kind="relationship" relationship="rootViewController" id="iVs-uA-g3r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L10-zO-2Ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="1255"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BiponeeLogo" width="242" height="114"/>
@@ -330,6 +461,6 @@
         <image name="right_dir" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VLG-ni-Pav"/>
+        <segue reference="mpc-Oi-ba8"/>
     </inferredMetricsTieBreakers>
 </document>
