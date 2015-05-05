@@ -23,6 +23,7 @@
 		ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019CF1AEE2BFD00221981 /* HomeViewController.swift */; };
 		ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA019D51AEE2F4500221981 /* SWRevealViewController.m */; };
 		ACA62C811AF2243400304262 /* Biponee.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA62C801AF2243400304262 /* Biponee.swift */; };
+		ACF1CF8D1AF8DEE800E34A9C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1CF8C1AF8DEE800E34A9C /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		ACA019D41AEE2F4500221981 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		ACA019D51AEE2F4500221981 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		ACA62C801AF2243400304262 /* Biponee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biponee.swift; sourceTree = "<group>"; };
+		ACF1CF8C1AF8DEE800E34A9C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				AC2F38C81AF75B7D00FF6D21 /* Home */,
 				AC2F38CC1AF75B8600FF6D21 /* Category */,
 				AC2F38D01AF7891F00FF6D21 /* Category Details */,
+				ACF1CF861AF8DB3D00E34A9C /* Product Details */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,14 @@
 				ACA019D31AEE2F4500221981 /* Biponee-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		ACF1CF861AF8DB3D00E34A9C /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				ACF1CF8C1AF8DEE800E34A9C /* ProductDetailViewController.swift */,
+			);
+			name = "Product Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +442,7 @@
 				AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */,
 				AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */,
 				AC2F38D61AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift in Sources */,
+				ACF1CF8D1AF8DEE800E34A9C /* ProductDetailViewController.swift in Sources */,
 				ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */,
 				ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */,
 				AC7ECCED1AF0DD9A00888FD1 /* CategoryTableViewCell.swift in Sources */,

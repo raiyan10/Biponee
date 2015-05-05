@@ -13,6 +13,8 @@ class CategoryDetailViewController: UIViewController, UICollectionViewDataSource
 
     var navTitle : String = ""
     var categoryDetails : NSMutableArray = []
+    var productDetails : ProductDetail!
+    var relatedProducts : NSMutableArray = []
     
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var categoryCollectionView: UICollectionView!
@@ -102,7 +104,25 @@ class CategoryDetailViewController: UIViewController, UICollectionViewDataSource
         
             cell.nameLabel.text = (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).Name
             cell.shortDescLabel.text = (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).ShortDescription
-            cell.priceLabel.text = (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).Price
+        
+            let font:UIFont? = UIFont(name: "Avenir Next Condensed", size: 17.0)
+        
+            let currentPriceText = (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).Price
+            let oldPriceText = (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).OldPrice
+        
+            var currentPriceAttributedText: NSMutableAttributedString =  NSMutableAttributedString(string: "\(currentPriceText) ")
+            currentPriceAttributedText.addAttribute(NSFontAttributeName, value: font!, range: NSMakeRange(0, currentPriceAttributedText.length))
+            currentPriceAttributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor(), range: NSMakeRange(0, currentPriceAttributedText.length))
+        
+        
+            var oldPriceAttributedText: NSMutableAttributedString =  NSMutableAttributedString(string: oldPriceText)
+            oldPriceAttributedText.addAttribute(NSFontAttributeName, value: font!, range: NSMakeRange(0, oldPriceAttributedText.length))
+            oldPriceAttributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, oldPriceAttributedText.length))
+            oldPriceAttributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: NSMakeRange(0, oldPriceAttributedText.length))
+        
+            currentPriceAttributedText.appendAttributedString(oldPriceAttributedText)
+        
+            cell.priceLabel.attributedText = currentPriceAttributedText
         
             let imageURL = (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).ImageUrl
         
@@ -111,11 +131,61 @@ class CategoryDetailViewController: UIViewController, UICollectionViewDataSource
         
             cell.request = Alamofire.request(.GET, imageURL).responseImage() {
                 (request, _, image, error) in
-                if error == nil && image != nil {
+                
+                if error == nil && image != nil
+                {
                     cell.catImageView.image = image
+                }
+                
+                if (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).AvailableForPreOrder == true
+                {
+                    cell.soldOutImageView.hidden = false;
+                }
+                else
+                {
+                    cell.soldOutImageView.hidden = true;
                 }
             }
         
             return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        let productId = (self.categoryDetails.objectAtIndex(indexPath.row) as! CategoryDetails).Id
+        
+        Alamofire.request(Biponee.Router.ProductDetail(productId)).validate().responseJSON()
+        {
+            (_, _, JSON, error) in
+                
+            //println(JSON)
+            if error == nil
+            {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0))
+                {
+                    let productJSON = JSON  as! NSDictionary
+                    self.productDetails = ProductDetail(name: productJSON["Name"] as! String, shortDesc: productJSON["ShortDescription"] as! String, fullDesc: productJSON["FullDescription"] as! String, productPrice: productJSON["ProductPrice"]!, productManufacturer: productJSON["ProductManufacturers"]!)
+                    
+                    let associatedProducts = (productJSON["AssociatedProducts"] as! [NSDictionary]).map { AssociatedProducts(JSON: $0) }
+                    self.relatedProducts = NSMutableArray(array: associatedProducts)
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let prodDetailViewCon = storyboard.instantiateViewControllerWithIdentifier("prodDetailViewCon") as! ProductDetailViewController
+                        prodDetailViewCon.productDetails = self.productDetails
+                        prodDetailViewCon.relatedProducts = self.relatedProducts
+                                
+                        self.navigationController!.pushViewController(prodDetailViewCon, animated: true)
+                    }
+                }
+            }
+            else
+            {
+                println("Error: \(error!.localizedDescription)")
+            }
+        }
+    }
 }
+
+

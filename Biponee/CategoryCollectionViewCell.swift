@@ -14,6 +14,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     var request: Alamofire.Request?
     
     @IBOutlet var catImageView: UIImageView!
+    @IBOutlet var soldOutImageView: UIImageView!
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var shortDescLabel: UILabel!
