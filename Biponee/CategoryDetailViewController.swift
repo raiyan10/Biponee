@@ -15,6 +15,7 @@ class CategoryDetailViewController: UIViewController, UICollectionViewDataSource
     var categoryDetails : NSMutableArray = []
     var productDetails : ProductDetail!
     var relatedProducts : NSMutableArray = []
+    var productPictures : NSMutableArray = []
     
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var categoryCollectionView: UICollectionView!
@@ -62,9 +63,11 @@ class CategoryDetailViewController: UIViewController, UICollectionViewDataSource
         {
             itemWidth = (view.bounds.size.width - 10) / 2
             layout.itemSize = CGSize(width: itemWidth, height: itemWidth + 50)
-            layout.minimumInteritemSpacing = 2.0
+            layout.minimumInteritemSpacing = 2.0 //1000.0
             layout.minimumLineSpacing = 2.0
+            //layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
         }
+        println(layout.itemSize.width)
         
         self.categoryCollectionView.collectionViewLayout = layout
     }
@@ -169,12 +172,16 @@ class CategoryDetailViewController: UIViewController, UICollectionViewDataSource
                     let associatedProducts = (productJSON["AssociatedProducts"] as! [NSDictionary]).map { AssociatedProducts(JSON: $0) }
                     self.relatedProducts = NSMutableArray(array: associatedProducts)
                     
+                    let pictureModels = (productJSON["PictureModels"] as! [NSDictionary]).map { PictureModel(JSON: $0) }
+                    self.productPictures = NSMutableArray(array: pictureModels)
+                    
                     dispatch_async(dispatch_get_main_queue())
                     {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let prodDetailViewCon = storyboard.instantiateViewControllerWithIdentifier("prodDetailViewCon") as! ProductDetailViewController
                         prodDetailViewCon.productDetails = self.productDetails
                         prodDetailViewCon.relatedProducts = self.relatedProducts
+                        prodDetailViewCon.pictureModels = self.productPictures
                                 
                         self.navigationController!.pushViewController(prodDetailViewCon, animated: true)
                     }

@@ -171,5 +171,15 @@ class AssociatedProducts : NSObject
     }
 }
 
-
+class PictureModel: NSObject
+{
+    let ImageUrl: String
+    let FullSizeImageUrl: String
+    
+    init(JSON: AnyObject)
+    {
+        self.ImageUrl = JSON.valueForKeyPath("ImageUrl") as! String
+        self.FullSizeImageUrl = JSON.valueForKeyPath("FullSizeImageUrl") as! String
+    }
+}
 
