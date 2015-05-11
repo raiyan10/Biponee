@@ -1,0 +1,72 @@
+//
+//  RegisterViewController.swift
+//  Biponee
+//
+//  Created by Masudur Rahman on 5/11/15.
+//  Copyright (c) 2015 BS-23. All rights reserved.
+//
+
+import UIKit
+
+class RegisterViewController: UIViewController {
+
+    @IBOutlet var menuButton: UIBarButtonItem!
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var firstNameTextField: UITextField!
+    @IBOutlet var lastNameTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var phoneTextField: UITextField!
+    @IBOutlet var passTextField: UITextField!
+    @IBOutlet var conPassTextField: UITextField!
+    @IBOutlet var newsLetterSwitch: UISwitch!
+    @IBOutlet var registerButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        if self.revealViewController() != nil
+        {
+            self.revealViewController().rearViewRevealWidth = 300
+            
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        self.containerView.layer.cornerRadius = 8.0
+        
+        self.registerButton.layer.cornerRadius = 8.0 
+        
+//        self.createAccButton.layer.cornerRadius = 4.0
+//        self.createAccButton.layer.borderWidth = 1.0
+//        self.createAccButton.layer.borderColor = UIColor.blackColor().CGColor
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    @IBAction func feedNewsLetter(sender: AnyObject)
+    {
+        
+    }
+
+    @IBAction func registerAccount(sender: AnyObject)
+    {
+        
+    }
+    
+}

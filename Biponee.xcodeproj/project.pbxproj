@@ -27,6 +27,7 @@
 		ACA62C811AF2243400304262 /* Biponee.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA62C801AF2243400304262 /* Biponee.swift */; };
 		ACE1959F1AFCB7F90071AA47 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1959E1AFCB7F90071AA47 /* LoginViewController.swift */; };
 		ACF1CF8D1AF8DEE800E34A9C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1CF8C1AF8DEE800E34A9C /* ProductDetailViewController.swift */; };
+		ACF41EDC1B009D9C0077267A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF41EDB1B009D9C0077267A /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		ACA62C801AF2243400304262 /* Biponee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biponee.swift; sourceTree = "<group>"; };
 		ACE1959E1AFCB7F90071AA47 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACF1CF8C1AF8DEE800E34A9C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		ACF41EDB1B009D9C0077267A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 				AC2F38D01AF7891F00FF6D21 /* Category Details */,
 				ACF1CF861AF8DB3D00E34A9C /* Product Details */,
 				ACE1959A1AFCB7C00071AA47 /* Login */,
+				ACF41ED71B009D2F0077267A /* Register */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -311,6 +314,14 @@
 				AC7599871AFB49B400EE042F /* FullImageViewController.swift */,
 			);
 			name = "Product Details";
+			sourceTree = "<group>";
+		};
+		ACF41ED71B009D2F0077267A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				ACF41EDB1B009D9C0077267A /* RegisterViewController.swift */,
+			);
+			name = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +469,7 @@
 				ACA62C811AF2243400304262 /* Biponee.swift in Sources */,
 				AC2F38D41AF78CD600FF6D21 /* CategoryDetailViewController.swift in Sources */,
 				AC70C7031AFA32160098F6B6 /* ContentViewController.swift in Sources */,
+				ACF41EDC1B009D9C0077267A /* RegisterViewController.swift in Sources */,
 				AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */,
 				AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */,
 				AC2F38D61AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift in Sources */,
@@ -529,7 +541,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -574,7 +587,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
