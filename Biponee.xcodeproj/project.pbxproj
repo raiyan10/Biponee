@@ -25,6 +25,9 @@
 		ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019CF1AEE2BFD00221981 /* HomeViewController.swift */; };
 		ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA019D51AEE2F4500221981 /* SWRevealViewController.m */; };
 		ACA62C811AF2243400304262 /* Biponee.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA62C801AF2243400304262 /* Biponee.swift */; };
+		ACC0C1311B01FC2D00888B37 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0C1301B01FC2D00888B37 /* FBSDKCoreKit.framework */; };
+		ACC0C1331B02018E00888B37 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0C1321B02018E00888B37 /* FBSDKLoginKit.framework */; };
+		ACC0C1351B0201A500888B37 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0C1341B0201A500888B37 /* FBSDKShareKit.framework */; };
 		ACE1959F1AFCB7F90071AA47 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1959E1AFCB7F90071AA47 /* LoginViewController.swift */; };
 		ACF1CF8D1AF8DEE800E34A9C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1CF8C1AF8DEE800E34A9C /* ProductDetailViewController.swift */; };
 		ACF41EDC1B009D9C0077267A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF41EDB1B009D9C0077267A /* RegisterViewController.swift */; };
@@ -113,6 +116,9 @@
 		ACA019D41AEE2F4500221981 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		ACA019D51AEE2F4500221981 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		ACA62C801AF2243400304262 /* Biponee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biponee.swift; sourceTree = "<group>"; };
+		ACC0C1301B01FC2D00888B37 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		ACC0C1321B02018E00888B37 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		ACC0C1341B0201A500888B37 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		ACE1959E1AFCB7F90071AA47 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACF1CF8C1AF8DEE800E34A9C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		ACF41EDB1B009D9C0077267A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +129,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC0C1351B0201A500888B37 /* FBSDKShareKit.framework in Frameworks */,
 				AC7ECD001AF129A700888FD1 /* Alamofire.framework in Frameworks */,
+				ACC0C1311B01FC2D00888B37 /* FBSDKCoreKit.framework in Frameworks */,
+				ACC0C1331B02018E00888B37 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +233,9 @@
 		ACA019A81AEE121D00221981 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ACC0C12F1B01FBE800888B37 /* Frameworks */,
 				ACA019D11AEE2F1400221981 /* 3rd Parties */,
+				ACA019D31AEE2F4500221981 /* Biponee-Bridging-Header.h */,
 				ACA019A91AEE121D00221981 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -293,9 +304,18 @@
 			children = (
 				ACA019D41AEE2F4500221981 /* SWRevealViewController.h */,
 				ACA019D51AEE2F4500221981 /* SWRevealViewController.m */,
-				ACA019D31AEE2F4500221981 /* Biponee-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		ACC0C12F1B01FBE800888B37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACC0C1321B02018E00888B37 /* FBSDKLoginKit.framework */,
+				ACC0C1341B0201A500888B37 /* FBSDKShareKit.framework */,
+				ACC0C1301B01FC2D00888B37 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		ACE1959A1AFCB7C00071AA47 /* Login */ = {
@@ -614,6 +634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/Users/masudurrahman1/Documents/FacebookSDK\"";
 				INFOPLIST_FILE = Biponee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -629,6 +650,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/Users/masudurrahman1/Documents/FacebookSDK\"";
 				INFOPLIST_FILE = Biponee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

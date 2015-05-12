@@ -1004,7 +1004,7 @@
                                                         </constraints>
                                                         <state key="normal" image="fblogin"/>
                                                         <connections>
-                                                            <action selector="loginWithFB:" destination="OmB-cf-JE4" eventType="touchUpInside" id="GKk-Av-XCh"/>
+                                                            <action selector="loginWithFB:" destination="OmB-cf-JE4" eventType="touchUpInside" id="eNH-Gy-2gp"/>
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTR-bl-AOV" userLabel="emailTextField">
@@ -1174,7 +1174,7 @@
                         <outlet property="createAccButton" destination="2sI-D3-yco" id="Cnb-HR-icB"/>
                         <outlet property="emailSwitch" destination="QUt-Pi-PBP" id="5hk-4S-sHy"/>
                         <outlet property="emailTextField" destination="mTR-bl-AOV" id="0Lc-o9-coG"/>
-                        <outlet property="fbLoginButton" destination="84P-5O-k0f" id="PXf-XF-poX"/>
+                        <outlet property="fbLoginButton" destination="84P-5O-k0f" id="aRO-qX-WXD"/>
                         <outlet property="loginButton" destination="Gbe-Nn-gLQ" id="dnd-kC-uzl"/>
                         <outlet property="menuButton" destination="rvi-ee-D4d" id="2DS-1M-1Md"/>
                         <outlet property="passwordTextField" destination="TOm-hH-tP6" id="VUB-mO-9rM"/>
