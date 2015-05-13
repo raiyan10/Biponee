@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AC2F38D41AF78CD600FF6D21 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F38D31AF78CD600FF6D21 /* CategoryDetailViewController.swift */; };
 		AC2F38D61AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F38D51AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift */; };
+		AC4A74A61B036E8A0007F55E /* CustomerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A74A51B036E8A0007F55E /* CustomerInfoViewController.swift */; };
+		AC4A74AB1B038EF30007F55E /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A74AA1B038EF30007F55E /* ChangePassViewController.swift */; };
 		AC70C7031AFA32160098F6B6 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70C7021AFA32160098F6B6 /* ContentViewController.swift */; };
 		AC7599881AFB49B400EE042F /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7599871AFB49B400EE042F /* FullImageViewController.swift */; };
 		AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */; };
@@ -25,6 +27,8 @@
 		ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA019CF1AEE2BFD00221981 /* HomeViewController.swift */; };
 		ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA019D51AEE2F4500221981 /* SWRevealViewController.m */; };
 		ACA62C811AF2243400304262 /* Biponee.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA62C801AF2243400304262 /* Biponee.swift */; };
+		ACA632501B03512A00A73822 /* MyAccTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6324F1B03512A00A73822 /* MyAccTableViewController.swift */; };
+		ACA632521B03554900A73822 /* MyAccTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA632511B03554900A73822 /* MyAccTableViewCell.swift */; };
 		ACC0C1311B01FC2D00888B37 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0C1301B01FC2D00888B37 /* FBSDKCoreKit.framework */; };
 		ACC0C1331B02018E00888B37 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0C1321B02018E00888B37 /* FBSDKLoginKit.framework */; };
 		ACC0C1351B0201A500888B37 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0C1341B0201A500888B37 /* FBSDKShareKit.framework */; };
@@ -95,6 +99,8 @@
 /* Begin PBXFileReference section */
 		AC2F38D31AF78CD600FF6D21 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
 		AC2F38D51AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC4A74A51B036E8A0007F55E /* CustomerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfoViewController.swift; sourceTree = "<group>"; };
+		AC4A74AA1B038EF30007F55E /* ChangePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
 		AC70C7021AFA32160098F6B6 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		AC7599871AFB49B400EE042F /* FullImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		AC7ECCEA1AF0D42E00888FD1 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 		ACA019D41AEE2F4500221981 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		ACA019D51AEE2F4500221981 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		ACA62C801AF2243400304262 /* Biponee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biponee.swift; sourceTree = "<group>"; };
+		ACA6324F1B03512A00A73822 /* MyAccTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccTableViewController.swift; sourceTree = "<group>"; };
+		ACA632511B03554900A73822 /* MyAccTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccTableViewCell.swift; sourceTree = "<group>"; };
 		ACC0C1301B01FC2D00888B37 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		ACC0C1321B02018E00888B37 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		ACC0C1341B0201A500888B37 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -287,6 +295,7 @@
 				ACF1CF861AF8DB3D00E34A9C /* Product Details */,
 				ACE1959A1AFCB7C00071AA47 /* Login */,
 				ACF41ED71B009D2F0077267A /* Register */,
+				ACA6324B1B034A4A00A73822 /* My Account */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -306,6 +315,17 @@
 				ACA019D51AEE2F4500221981 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		ACA6324B1B034A4A00A73822 /* My Account */ = {
+			isa = PBXGroup;
+			children = (
+				ACA6324F1B03512A00A73822 /* MyAccTableViewController.swift */,
+				ACA632511B03554900A73822 /* MyAccTableViewCell.swift */,
+				AC4A74A51B036E8A0007F55E /* CustomerInfoViewController.swift */,
+				AC4A74AA1B038EF30007F55E /* ChangePassViewController.swift */,
+			);
+			name = "My Account";
 			sourceTree = "<group>";
 		};
 		ACC0C12F1B01FBE800888B37 /* Frameworks */ = {
@@ -491,12 +511,16 @@
 				AC70C7031AFA32160098F6B6 /* ContentViewController.swift in Sources */,
 				ACF41EDC1B009D9C0077267A /* RegisterViewController.swift in Sources */,
 				AC7ECCEB1AF0D42E00888FD1 /* CategoryTableViewController.swift in Sources */,
+				AC4A74A61B036E8A0007F55E /* CustomerInfoViewController.swift in Sources */,
 				AC7ECCEF1AF0ED0700888FD1 /* HeaderTableViewCell.swift in Sources */,
 				AC2F38D61AF7A0AD00FF6D21 /* CategoryCollectionViewCell.swift in Sources */,
+				ACA632521B03554900A73822 /* MyAccTableViewCell.swift in Sources */,
 				AC7599881AFB49B400EE042F /* FullImageViewController.swift in Sources */,
 				ACF1CF8D1AF8DEE800E34A9C /* ProductDetailViewController.swift in Sources */,
 				ACA019D01AEE2BFD00221981 /* HomeViewController.swift in Sources */,
+				ACA632501B03512A00A73822 /* MyAccTableViewController.swift in Sources */,
 				ACA019D61AEE2F4500221981 /* SWRevealViewController.m in Sources */,
+				AC4A74AB1B038EF30007F55E /* ChangePassViewController.swift in Sources */,
 				AC7ECCED1AF0DD9A00888FD1 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

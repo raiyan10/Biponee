@@ -107,6 +107,8 @@ class MenuController: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         if indexPath.row == 2
         {
             Alamofire.request(Biponee.Router.Categories).validate().responseJSON()
@@ -126,8 +128,6 @@ class MenuController: UITableViewController
                         
                         dispatch_async(dispatch_get_main_queue())
                         {
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            
                             let catTableViewController = storyboard.instantiateViewControllerWithIdentifier("catTableVC") as! CategoryTableViewController
                             catTableViewController.productCategories = self.categories
                             catTableViewController.headerTitle = "Categories"
@@ -141,6 +141,12 @@ class MenuController: UITableViewController
                     println("Error: \(error!.localizedDescription)")
                 }
             }
+        }
+        else if indexPath.row == 4
+        {
+            let myAccTableViewController = storyboard.instantiateViewControllerWithIdentifier("myAccTableVC") as! MyAccTableViewController
+            
+            self.navigationController!.pushViewController(myAccTableViewController, animated: true)
         }
     }
 

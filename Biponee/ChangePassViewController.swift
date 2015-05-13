@@ -1,26 +1,21 @@
 //
-//  RegisterViewController.swift
+//  ChangePassViewController.swift
 //  Biponee
 //
-//  Created by Masudur Rahman on 5/11/15.
+//  Created by Masudur Rahman on 5/13/15.
 //  Copyright (c) 2015 BS-23. All rights reserved.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class ChangePassViewController: UIViewController {
 
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var containerView: UIView!
-    @IBOutlet var firstNameTextField: UITextField!
-    @IBOutlet var lastNameTextField: UITextField!
-    @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var addressTextField: UITextField!
-    @IBOutlet var phoneTextField: UITextField!
-    @IBOutlet var passTextField: UITextField!
-    @IBOutlet var conPassTextField: UITextField!
-    @IBOutlet var newsLetterSwitch: UISwitch!
-    @IBOutlet var registerButton: UIButton!
+    @IBOutlet var oldPassTextField: UITextField!
+    @IBOutlet var newPassTextField: UITextField!
+    @IBOutlet var confirmPassTextField: UITextField!
+    @IBOutlet var confirmPassButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +31,10 @@ class RegisterViewController: UIViewController {
         }
         
         self.containerView.layer.cornerRadius = 8.0
-        self.registerButton.layer.cornerRadius = 8.0
+        
+        self.confirmPassButton.layer.cornerRadius = 4.0
+        self.confirmPassButton.layer.borderWidth = 1.0
+        self.confirmPassButton.layer.borderColor = UIColor.orangeColor().CGColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,14 +53,8 @@ class RegisterViewController: UIViewController {
     }
     */
     
-    @IBAction func feedNewsLetter(sender: AnyObject)
+    @IBAction func changePassword(sender: AnyObject)
     {
         
     }
-
-    @IBAction func registerAccount(sender: AnyObject)
-    {
-        
-    }
-    
 }

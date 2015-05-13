@@ -1,14 +1,14 @@
 //
-//  RegisterViewController.swift
+//  CustomerInfoViewController.swift
 //  Biponee
 //
-//  Created by Masudur Rahman on 5/11/15.
+//  Created by Masudur Rahman on 5/13/15.
 //  Copyright (c) 2015 BS-23. All rights reserved.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class CustomerInfoViewController: UIViewController {
 
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var containerView: UIView!
@@ -17,10 +17,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var addressTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
-    @IBOutlet var passTextField: UITextField!
-    @IBOutlet var conPassTextField: UITextField!
     @IBOutlet var newsLetterSwitch: UISwitch!
-    @IBOutlet var registerButton: UIButton!
+    @IBOutlet var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +34,10 @@ class RegisterViewController: UIViewController {
         }
         
         self.containerView.layer.cornerRadius = 8.0
-        self.registerButton.layer.cornerRadius = 8.0
+        
+        self.saveButton.layer.cornerRadius = 4.0
+        self.saveButton.layer.borderWidth = 1.0
+        self.saveButton.layer.borderColor = UIColor.orangeColor().CGColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,9 +61,8 @@ class RegisterViewController: UIViewController {
         
     }
 
-    @IBAction func registerAccount(sender: AnyObject)
+    @IBAction func saveInfo(sender: AnyObject)
     {
         
     }
-    
 }
